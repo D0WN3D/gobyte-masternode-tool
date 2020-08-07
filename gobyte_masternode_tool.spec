@@ -16,7 +16,7 @@ with open(os.path.join(base_dir, 'version.txt')) as fptr:
     for line in fptr:
         parts = [elem.strip() for elem in line.split('=')]
         if len(parts) == 2 and parts[0].lower() == 'version_str':
-            version_str = parts[1].strip("'")
+            version_str = parts[1].strip("")
             break
 
 add_files = [
