@@ -1,0 +1,22 @@
+[
+  {
+    "device": "trezor",
+    "model": "T",
+    "version": [2, 0, 6],
+    "official": false,
+    "testnet": true,
+    "url": "hardware-wallets/firmware/trezor-t/trezor-t-2.0.6-gobyte-testnet.bin",
+    "fingerprint": "#",
+    "changelog": "GoByte Testnet support by D0WN3D\nhttps://github.com/D0WN3D/trezor-core/tree/gobyte-testnet"
+  },
+  {
+    "device": "keepkey",
+    "model": "1",
+    "version": [5, 0, 1],
+    "official": false,
+    "testnet": true,
+    "url": "hardware-wallets/firmware/keepkey/keepkey-5.0.1-gobyte-testnet.bin",
+    "fingerprint": "#",
+    "changelog": "GoByte Testnet support by D0WN3D\nhttps://github.com/D0WN3D/keepkey-firmware"
+  }
+]
