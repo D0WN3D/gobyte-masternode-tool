@@ -365,7 +365,7 @@ class SendFundsDestination(QtWidgets.QWidget, WndUtils):
         self.lay_addresses.addWidget(self.lbl_change_address, 0, 0)
         # the 'change' address combobox:
         self.cbo_change_address = QtWidgets.QComboBox(self.scroll_area_widget)
-        width = self.cbo_change_address.fontMetrics().width('GvqNXF23dRBksxjW3VQGrBtJw7vkhWhenQ')
+        width = self.cbo_change_address.fontMetrics().width('GZMkeSpJgyog12qrSyxvPfThRn5Vu5DWE1')
         self.address_widget_width = width + 40
         # combobox width on macos needs to be tweaked:
         self.cbo_change_address.setMinimumWidth(self.address_widget_width + {'darwin': 5}.get(sys.platform, 0))
