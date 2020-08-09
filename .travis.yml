@@ -1,0 +1,26 @@
+language: python
+dist: xenial
+sudo: true
+python:
+    - "3.6"
+
+env:
+    global:
+        - RUN_TESTS=false
+
+before_install:
+  - sudo apt-get -y install libudev-dev libusb-1.0-0-dev libfox-1.6-dev autotools-dev autoconf automake libtool libpython3-all-dev python3-pip git cmake
+
+install:   
+    - pip install --upgrade pip
+    - pip install virtualenv
+    - mkdir gmt && cd gmt
+    - virtualenv -p python3.6 venv
+    - . venv/bin/activate
+    - pip install --upgrade setuptools
+    - git clone https://github.com/D0WN3D/gobyte-masternode-tool
+    - cd gobyte-masternode-tool/
+    - pip install -r requirements.txt
+    
+script:
+    - pyinstaller --distpath=../dist/linux --workpath=../dist/linux/build gobyte_masternode_tool.spec
