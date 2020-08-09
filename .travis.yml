@@ -9,7 +9,6 @@ env:
         PROTOBUF_VERSION=3.6.1
 
 install:   
-    - apt-get -y install libudev-dev libusb-1.0-0-dev libfox-1.6-dev autotools-dev autoconf automake libtool libpython3-all-dev python3.6-dev python3-pip git cmake
     - pip install --upgrade pip
     - pip install virtualenv
     - mkdir gmt && cd gmt
