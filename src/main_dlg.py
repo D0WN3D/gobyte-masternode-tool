@@ -736,7 +736,7 @@ class MainWindow(QMainWindow, WndUtils, ui_main_dlg.Ui_MainWindow):
                         self.config.hw_coin_name = ''
                         if self.config.hw_type in (HWType.trezor, HWType.keepkey):
                             for coin in self.hw_client.features.coins:
-                                if coin.coin_name.upper() == 'DASH TESTNET' or coin.coin_shortcut.upper() == 'TDASH':
+                                if coin.coin_name.upper() == 'GoByte TESTNET' or coin.coin_shortcut.upper() == 'TGoByte':
                                     found_testnet_support = True
                                     self.config.hw_coin_name = coin.coin_name
                                     break
@@ -1528,7 +1528,7 @@ class MainWindow(QMainWindow, WndUtils, ui_main_dlg.Ui_MainWindow):
                    + gobyte_utils.num_to_varint(len(sig2) / 2).hex() + sig2
 
             work = '01' + work
-            if node_protocol_version >= 70208:
+            if node_protocol_version >= 70210:
                 work = work + '0001000100'
 
             ret = self.gobyted_intf.masternodebroadcast("decode", work)
