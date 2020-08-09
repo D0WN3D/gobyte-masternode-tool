@@ -22,3 +22,6 @@ install:
     - cd gobyte-masternode-tool/
     - pip install -r requirements.txt
     - pyinstaller --distpath=../dist/linux --workpath=../dist/linux/build gobyte_masternode_tool.spec
+
+script:
+    - run /gmt/dist/linux/DashMasternodeTool
