@@ -24,4 +24,5 @@ install:
     - pyinstaller --distpath=../dist/linux --workpath=../dist/linux/build gobyte_masternode_tool.spec
 
 script:
-    - run /gmt/dist/linux/DashMasternodeTool
+    - cd /gmt/dist/linux/
+    - ./GoByteMasternodeTool
