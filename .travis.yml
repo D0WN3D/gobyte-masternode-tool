@@ -8,7 +8,7 @@ env:
     global:
         - PROTOBUF_VERSION=3.6.1
         - RUN_TESTS=false
-        - MAKEJOBS=-j3
+        - MAKEJOBS=-j5
         - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
 
 #matrix:
