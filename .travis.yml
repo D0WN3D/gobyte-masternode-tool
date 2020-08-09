@@ -6,23 +6,7 @@ python:
 
 env:
     global:
-        - PROTOBUF_VERSION=3.6.1
         - RUN_TESTS=false
-        - MAKEJOBS=-j5
-        - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
-
-matrix:
-# ARM
-    - HOST=arm-linux-gnueabihf
-# Win32
-    - HOST=i686-w64-mingw32
-# 32-bit + gobyte
-    - HOST=i686-pc-linux-gnu
-# Win64
-    - HOST=x86_64-w64-mingw32
-# Cross-Mac
-    - HOST=x86_64-apple-darwin11
-
 
 before_install:
   - sudo apt-get -y install libudev-dev libusb-1.0-0-dev libfox-1.6-dev autotools-dev autoconf automake libtool libpython3-all-dev python3-pip git cmake
@@ -39,5 +23,4 @@ install:
     - pip install -r requirements.txt
     
 script:
-    - OUTDIR=$BASE_OUTDIR/$TRAVIS_PULL_REQUEST/$TRAVIS_JOB_NUMBER-$HOST
-    - pyinstaller --distpath=../dist/$HOST --workpath=../dist/$HOST/build gobyte_masternode_tool.spec
+    - pyinstaller --distpath=../dist/linux --workpath=../dist/linux/build gobyte_masternode_tool.spec
