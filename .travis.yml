@@ -10,7 +10,7 @@ env:
         - RUN_TESTS=false
         - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
 
-#matrix:
+matrix:
 # ARM
     - HOST=arm-linux-gnueabihf
 # Win32
