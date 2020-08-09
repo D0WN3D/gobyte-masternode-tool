@@ -8,8 +8,10 @@ env:
     global:
         - PROTOBUF_VERSION=3.6.1
         - RUN_TESTS=false
+        - MAKEJOBS=-j3
+        - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
 
-matrix:
+#matrix:
 # ARM
     - HOST=arm-linux-gnueabihf
 # Win32
@@ -37,4 +39,5 @@ install:
     - pip install -r requirements.txt
     
 script:
+    - OUTDIR=$BASE_OUTDIR/$TRAVIS_PULL_REQUEST/$TRAVIS_JOB_NUMBER-$HOST
     - pyinstaller --distpath=../dist/$HOST --workpath=../dist/$HOST/build gobyte_masternode_tool.spec
